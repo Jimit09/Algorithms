@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Algorithms.Data_Structures
+{
+    internal class StackUsingLinkedList
+    {
+        Node top;
+
+        void Push(int data)
+        {
+            Node newNode = new Node(data);
+            newNode.Next = top;
+            top = newNode;
+        }
+
+        int Pop()
+        {
+            if (top == null)
+            {
+                throw new InvalidOperationException("No items to Pop from the Stack");
+            }
+            int data = top.Data;
+            top = top.Next;
+            return data;
+        }
+
+        int Peak()
+        {
+            if (top == null)
+            {
+                throw new InvalidOperationException("No items to Pop from the Stack");
+            }
+            return top.Data;
+        }
+    }
+}
