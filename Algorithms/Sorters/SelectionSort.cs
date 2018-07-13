@@ -10,13 +10,12 @@ namespace Algorithms.Sorters
     {
         public void DoWork()
         {
-            DoSelectionSort();
+            int[] array = new int[] { 4, 10, 3, 2, 100, 45 };
+            DoSelectionSort(array);
         }
 
-        private void DoSelectionSort()
+        private void DoSelectionSort(int[] array)
         {
-            int[] array = new int[] { 4, 10, 3, 2, 100, 45 };
-
             for (int i = 0; i < array.Length; i++)
             {
                 int j = IndexOfMinimum(array, i);

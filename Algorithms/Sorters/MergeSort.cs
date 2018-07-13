@@ -35,13 +35,14 @@ namespace Algorithms.Sorters
 
         private void Sort(int[] array, int startIndex, int endIndex)
         {
-            if (startIndex < endIndex)
+            if (startIndex >= endIndex)
             {
-                var middleIndex = (startIndex + endIndex) / 2;
-                Sort(array, startIndex, middleIndex);
-                Sort(array, middleIndex + 1, endIndex);
-                Merge(array, startIndex, middleIndex, endIndex);
+                return;
             }
+            var middleIndex = (startIndex + endIndex) / 2;
+            Sort(array, startIndex, middleIndex);
+            Sort(array, middleIndex + 1, endIndex);
+            Merge(array, startIndex, middleIndex, endIndex);
         }
 
         private void Merge(int[] array, int startIndex, int middleIndex, int endIndex)
@@ -51,12 +52,12 @@ namespace Algorithms.Sorters
             int k = 0;
             for (int i = 0; i <= middleIndex; i++, k++)
             {
-                array[k] = lowHalf[i];
+                lowHalf[i] = array[k];
             }
 
             for (int i = 0; k <= endIndex; i++, k++)
             {
-                array[k] = highHalf[i];
+                highHalf[i] = array[k];
             }
 
             int m = 0, n = 0;
@@ -89,6 +90,8 @@ namespace Algorithms.Sorters
                 n++;
                 k++;
             }
+
+
         }
     }
 }

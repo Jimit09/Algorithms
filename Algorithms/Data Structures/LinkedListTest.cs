@@ -18,7 +18,7 @@ namespace Algorithms.Data_Structures
         {
             Console.WriteLine("Preparing linked list");
             List<int> dataPoints = new List<int>() { 3, 2, 10, 3, 5 };
-            Node node = null;
+            MyLinkedListNode node = null;
             MyLinkedList linkedList = CreateLinkedList(dataPoints);
 
             Console.WriteLine("Displaying Linked List");
@@ -38,7 +38,7 @@ namespace Algorithms.Data_Structures
             MyLinkedList linkedList1 = CreateLinkedList(dataPoints);
             dataPoints = new List<int>() { 2, 4, 8 };
             MyLinkedList linkedList2 = CreateLinkedList(dataPoints);
-            Node result = MergeLists(linkedList1.head, linkedList2.head);
+            MyLinkedListNode result = MergeLists1(linkedList1.head, linkedList2.head);
             Console.WriteLine("Displaying Linked List");
             DisplayLinkedList(result);
             Console.ReadLine();
@@ -56,8 +56,8 @@ namespace Algorithms.Data_Structures
 
         private bool MakeCycle(MyLinkedList linkedList)
         {
-            Node firstNode = linkedList.head;
-            Node currentNode = linkedList.head;
+            MyLinkedListNode firstNode = linkedList.head;
+            MyLinkedListNode currentNode = linkedList.head;
             if (firstNode == null || firstNode.Next == null)
             {
                 return false;
@@ -70,10 +70,10 @@ namespace Algorithms.Data_Structures
             return true;
         }
 
-        private void DisplayLinkedList(Node node)
+        private void DisplayLinkedList(MyLinkedListNode node)
         {
             Console.WriteLine();
-            Node current = node;
+            MyLinkedListNode current = node;
             if (node == null)
             {
                 Console.WriteLine("This is an empty list");
@@ -92,12 +92,12 @@ namespace Algorithms.Data_Structures
         //Refer HackerRank video on cycle in LinkedList
         private bool HasCycles(MyLinkedList linkedList)
         {
-            Node node1 = linkedList.head;
+            MyLinkedListNode node1 = linkedList.head;
             if (node1 == null || node1.Next == null)
             {
                 return false;
             }
-            Node node2 = linkedList.head.Next;
+            MyLinkedListNode node2 = linkedList.head.Next;
             while (node1 != null && node2 != null && node2.Next != null)
             {
                 if (node1 == node2)
@@ -108,40 +108,40 @@ namespace Algorithms.Data_Structures
             return false;
         }
 
-        public static Node MergeLists(Node headA, Node headB)
+        public static MyLinkedListNode MergeLists(MyLinkedListNode headA, MyLinkedListNode headB)
         {
             // This is a "method-only" submission.
             // You only need to complete this method
-            Node result = null;
-            Node head = null;
+            MyLinkedListNode resultCurrent = null;
+            MyLinkedListNode resultHead = null;
 
             while (headA != null && headB != null)
             {
                 if (headA.Data < headB.Data)
                 {
-                    if (result == null)
+                    if (resultCurrent == null)
                     {
-                        result = headA;
-                        head = headA;
+                        resultCurrent = headA;
+                        resultHead = headA;
                     }
                     else
                     {
-                        result.Next = headA;
-                        result = result.Next;
+                        resultCurrent.Next = headA;
+                        resultCurrent = resultCurrent.Next;
                     }
                     headA = headA.Next;
                 }
                 else
                 {
-                    if (result == null)
+                    if (resultCurrent == null)
                     {
-                        result = headB;
-                        head = headB;
+                        resultCurrent = headB;
+                        resultHead = headB;
                     }
                     else
                     {
-                        result.Next = headB;
-                        result = result.Next;
+                        resultCurrent.Next = headB;
+                        resultCurrent = resultCurrent.Next;
                     }
                     headB = headB.Next;
                 }
@@ -149,46 +149,111 @@ namespace Algorithms.Data_Structures
 
             while (headA != null)
             {
-                if (result == null)
+                if (resultCurrent == null)
                 {
-                    result = headA;
-                    head = headA;
+                    resultCurrent = headA;
+                    resultHead = headA;
                 }
                 else
                 {
-                    result.Next = headA;
-                    result = result.Next;
+                    resultCurrent.Next = headA;
+                    resultCurrent = resultCurrent.Next;
                 }
                 headA = headA.Next;
             }
 
             while (headB != null)
             {
-                if (result == null)
+                if (resultCurrent == null)
                 {
-                    result = headB;
-                    head = headB;
+                    resultCurrent = headB;
+                    resultHead = headB;
                 }
                 else
                 {
-                    result.Next = headB;
-                    result = result.Next;
+                    resultCurrent.Next = headB;
+                    resultCurrent = resultCurrent.Next;
                 }
                 headB = headB.Next;
             }
 
-            return head;
+            return resultHead;
         }
 
-        public static int GetNode(Node head, int positionFromTail)
+        public static MyLinkedListNode MergeLists1(MyLinkedListNode headA, MyLinkedListNode headB)
         {
             // This is a "method-only" submission.
-            // You only need to complete this method.
+            // You only need to complete this method
+            MyLinkedListNode resultCurrent = null;
+            MyLinkedListNode resultHead = null;
+
+            while (headA != null && headB != null)
+            {
+                MyLinkedListNode newNode = null;
+                if (headA.Data < headB.Data)
+                {
+                    newNode = new MyLinkedListNode(headA.Data);
+                    headA = headA.Next;
+                }
+                else
+                {
+                    newNode = new MyLinkedListNode(headB.Data);
+                    headB = headB.Next;
+                }
+                if (resultHead == null)
+                {
+                    resultHead = newNode;
+                    resultCurrent = newNode;
+                }
+                else
+                {
+                    resultCurrent.Next = newNode;
+                    resultCurrent = resultCurrent.Next;
+                }
+            }
+
+            while (headA != null)
+            {
+                MyLinkedListNode newNode = new MyLinkedListNode(headA.Data);
+                if (resultHead == null)
+                {
+                    resultHead = newNode;
+                    resultCurrent = newNode;
+                }
+                else
+                {
+                    resultCurrent.Next = newNode;
+                    resultCurrent = resultCurrent.Next;
+                }
+                headA = headA.Next;
+            }
+
+            while (headB != null)
+            {
+                MyLinkedListNode newNode = new MyLinkedListNode(headB.Data);
+                if (resultHead == null)
+                {
+                    resultHead = newNode;
+                    resultCurrent = newNode;
+                }
+                else
+                {
+                    resultCurrent.Next = newNode;
+                    resultCurrent = resultCurrent.Next;
+                }
+                headB = headB.Next;
+            }
+
+            return resultHead;
+        }
+
+        public static int GetNode(MyLinkedListNode head, int positionFromTail)
+        {
             int counter = -1;
             return FindNode(head, ref positionFromTail, ref counter);
         }
 
-        private static int FindNode(Node head, ref int positionFromTail, ref int counter)
+        private static int FindNode(MyLinkedListNode head, ref int positionFromTail, ref int counter)
         {
             if (head.Next == null)
             {
@@ -216,6 +281,34 @@ namespace Algorithms.Data_Structures
             return -1;
         }
 
+        public static MyLinkedListNode GetNodeFromTail(MyLinkedListNode head, int positionFromTail)
+        {
+            int counter = 0;
+            MyLinkedListNode current = head;
+            while (current.Next != null)
+            {
+                current = current.Next;
+                counter++;
+            }
+
+            counter = (counter - 1) - positionFromTail;
+            current = head;
+            while (counter != 0)
+            {
+                current = current.Next;
+                --counter;
+            }
+            //int i = 0;
+            //while (i <= counter)
+            //{
+            //    current = current.Next;
+            //    i++;
+            //}
+            return current;
+        }
+
+
+
         /*
          * 
          * Given pointers to the head nodes of  linked lists that merge together at some point, 
@@ -234,7 +327,7 @@ and returns the data value of the Node where the two lists merge.
          * 
          */
 
-        private int FindMergeNode(Node headA, Node headB)
+        private int FindMergeNode(MyLinkedListNode headA, MyLinkedListNode headB)
         {
             // Complete this function
             // Do not write the main method.
@@ -243,7 +336,7 @@ and returns the data value of the Node where the two lists merge.
             bool mergePointFound = false;
             while (headA != null && !mergePointFound)
             {
-                Node currentB = headB;
+                MyLinkedListNode currentB = headB;
                 while (currentB != null && !mergePointFound)
                 {
                     if (headA == currentB)

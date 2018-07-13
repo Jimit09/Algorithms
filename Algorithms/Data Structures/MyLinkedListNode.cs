@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Data_Structures
 {
-    internal class Node
+    internal class MyLinkedListNode
     {
-        internal Node Next { get; set; }
+        internal MyLinkedListNode Next { get; set; }
         internal int Data { get; private set; }
 
-        internal Node(int data)
+        internal MyLinkedListNode(int data)
         {
             this.Data = data;
         }

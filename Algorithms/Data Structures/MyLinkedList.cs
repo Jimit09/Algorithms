@@ -8,32 +8,33 @@ namespace Algorithms.Data_Structures
 {
     internal class MyLinkedList
     {
-        internal Node head { get; private set; }
+        internal MyLinkedListNode head { get; private set; }
 
-        internal void append(int data)
+        internal MyLinkedListNode append(int data)
         {
-            Node newNode = new Node(data);
+            MyLinkedListNode newNode = new MyLinkedListNode(data);
             if (head == null)
             {
                 head = newNode;
-                return;
+                return head;
             }
-            Node current = head;
+            MyLinkedListNode current = head;
             while (current.Next != null)
             {
                 current = current.Next;
             }
             current.Next = newNode;
+            return head;
         }
 
         internal void prepend(int data)
         {
             if (head == null)
             {
-                head = new Node(data);
+                head = new MyLinkedListNode(data);
                 return;
             }
-            Node newNode = new Node(data);
+            MyLinkedListNode newNode = new MyLinkedListNode(data);
             newNode.Next = head;
             head = newNode;
         }
@@ -49,7 +50,7 @@ namespace Algorithms.Data_Structures
                 head = head.Next;
                 return;
             }
-            Node current = head;
+            MyLinkedListNode current = head;
             while (current.Next != null)
             {
                 if (current.Next.Data == data)
@@ -60,17 +61,17 @@ namespace Algorithms.Data_Structures
             }
         }
 
-        internal Node InsertNth(int data, int position)
+        internal MyLinkedListNode InsertNth(int data, int position)
         {
             int indexToInsert = 0;
-            Node newNode = new Node(data);
-            Node prev = null;
+            MyLinkedListNode newNode = new MyLinkedListNode(data);
+            MyLinkedListNode prev = null;
             if (head == null)
             {
                 head = newNode;
                 return head;
             }
-            Node current = head;
+            MyLinkedListNode current = head;
             while (indexToInsert < position)
             {
                 prev = current;
@@ -90,11 +91,11 @@ namespace Algorithms.Data_Structures
             return head;
         }
 
-        public Node Delete(Node head, int position)
+        public MyLinkedListNode Delete(MyLinkedListNode head, int position)
         {
             int deleteAtIndex = 0;
-            Node current = head;
-            Node prev = null;
+            MyLinkedListNode current = head;
+            MyLinkedListNode prev = null;
 
             while (deleteAtIndex < position)
             {
@@ -109,6 +110,39 @@ namespace Algorithms.Data_Structures
             else
             {
                 prev.Next = current.Next;
+            }
+            return head;
+        }
+
+        static MyLinkedList DeleteDuplicates(MyLinkedList linkedList)
+        {
+            DeleteDuplicates(linkedList.head);
+            return linkedList;
+        }
+
+        private static MyLinkedListNode DeleteDuplicates(MyLinkedListNode head)
+        {
+            if (head == null || head.Next == null)
+            {
+                return head;
+            }
+            HashSet<int> set = new HashSet<int>();
+            MyLinkedListNode previous = head;
+            MyLinkedListNode current = head.Next;
+            set.Add(head.Data);
+            while (current != null)
+            {
+                if (set.Contains(current.Data))
+                {
+                    previous.Next = current.Next;
+                    current = previous.Next;
+                }
+                else
+                {
+                    set.Add(current.Data);
+                    previous = current;
+                    current = current.Next;
+                }
             }
             return head;
         }

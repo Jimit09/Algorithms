@@ -6,39 +6,39 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Tree.BinarySearchTree
 {
-    internal class Node
+    internal class TreeNode
     {
         int data;
-        Node left;
-        Node right;
+        TreeNode left;
+        TreeNode right;
 
-        internal Node(int data)
+        internal TreeNode(int data)
         {
             this.data = data;
         }
 
-        internal void insert(int value)
+        internal void Insert(int value)
         {
             if (value <= data)
             {
                 if (left == null)
                 {
-                    left = new Node(value);
+                    left = new TreeNode(value);
                 }
                 else
                 {
-                    left.insert(value);
+                    left.Insert(value);
                 }
             }
             else
             {
                 if (right == null)
                 {
-                    right = new Node(value);
+                    right = new TreeNode(value);
                 }
                 else
                 {
-                    right.insert(value);
+                    right.Insert(value);
                 }
             }
         }
@@ -114,11 +114,15 @@ namespace Algorithms.Tree.BinarySearchTree
             Console.WriteLine(data);
         }
 
-        bool CheckBalancedBST(Node root, int min, int max)
+        bool CheckBalancedBST(TreeNode root, int min, int max)
         {
             if (root == null)
             {
                 return true;
+            }
+            if (!(root.data >= min && root.data <= max))
+            {
+                return false;
             }
 
             return CheckBalancedBST(root.left, min, root.data - 1) && CheckBalancedBST(root.right, root.data + 1, max);
@@ -127,7 +131,7 @@ namespace Algorithms.Tree.BinarySearchTree
         //Check if tree is Balanced Binary tree
         bool CheckBalancedBST()
         {
-            Node node = null;
+            TreeNode node = null;
             return CheckBalancedBST(node, Int32.MinValue, Int32.MaxValue);
         }
     }

@@ -8,11 +8,11 @@ namespace Algorithms.Data_Structures
 {
     internal class StackUsingLinkedList
     {
-        Node top;
+        MyLinkedListNode top;
 
         void Push(int data)
         {
-            Node newNode = new Node(data);
+            MyLinkedListNode newNode = new MyLinkedListNode(data);
             newNode.Next = top;
             top = newNode;
         }

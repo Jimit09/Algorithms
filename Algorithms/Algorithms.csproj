@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,12 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinarySearch.cs" />
+    <Compile Include="Data Structures\Arrays\ArraysEx.cs" />
     <Compile Include="Data Structures\DoublyLinkedList.cs" />
     <Compile Include="Data Structures\Graph\Graph.cs" />
     <Compile Include="Data Structures\Graph\GraphNode.cs" />
     <Compile Include="Data Structures\LinkedListTest.cs" />
     <Compile Include="Data Structures\MyLinkedList.cs" />
-    <Compile Include="Data Structures\Node.cs" />
+    <Compile Include="Data Structures\MyLinkedListNode.cs" />
     <Compile Include="Data Structures\QueueUsingLinkedList.cs" />
     <Compile Include="Data Structures\QueueUsingLinkedListTest.cs" />
     <Compile Include="Data Structures\StackUsingLinkedList.cs" />
@@ -66,7 +69,7 @@
     <Compile Include="Sorters\MergeSort.cs" />
     <Compile Include="Sorters\QuickSort.cs" />
     <Compile Include="Sorters\SelectionSort.cs" />
-    <Compile Include="Tree\BinarySearchTree\Node.cs" />
+    <Compile Include="Tree\BinarySearchTree\TreeNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

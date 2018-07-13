@@ -8,12 +8,12 @@ namespace Algorithms.Data_Structures
 {
     internal class QueueUsingLinkedList
     {
-        Node head;//Remove using head
-        Node tail;//Add using tail
+        MyLinkedListNode head;//Remove using head
+        MyLinkedListNode tail;//Add using tail
 
         void Add(int data)
         {
-            Node newNode = new Node(data);
+            MyLinkedListNode newNode = new MyLinkedListNode(data);
             if (tail != null)
             {
                 tail.Next = newNode;

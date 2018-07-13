@@ -17,9 +17,10 @@ namespace Algorithms.Data_Structures.Graph
             s.Adjacent.Add(d);
         }
 
-        private GraphNode getNode(int source)
+        private GraphNode getNode(int data)
         {
-            throw new NotImplementedException();
+            GraphNode graphNode = new GraphNode(data);
+            return graphNode;
         }
 
         internal bool HasPathDFS(int source, int destination)
@@ -41,9 +42,9 @@ namespace Algorithms.Data_Structures.Graph
             {
                 return true;
             }
-            foreach (var child in source.Adjacent)
+            foreach (var adjacent in source.Adjacent)
             {
-                if (HasPathDFS(child, destination, visited))
+                if (HasPathDFS(adjacent, destination, visited))
                 {
                     return true;
                 }

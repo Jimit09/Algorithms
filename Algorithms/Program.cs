@@ -1,4 +1,5 @@
 ﻿using Algorithms.Data_Structures;
+using Algorithms.Data_Structures.Arrays;
 using Algorithms.RecrusiveAlgos;
 using Algorithms.Sorters;
 using System;
@@ -29,10 +30,13 @@ namespace Algorithms
             //algoToRun = new Powers();
             //algoToRun = new MergeSort();
             //algoToRun = new BubbleSort();
-            algoToRun = new LinkedListTest();
+            //algoToRun = new LinkedListTest();
             //algoToRun = new QuickSort();
             //algoToRun = new ReferenceSample();
-            algoToRun.DoWork();
+            //algoToRun.DoWork();
+
+            ArraysEx arraysEx = new ArraysEx();
+            arraysEx.RearrangeTest();
         }
     }
 }
