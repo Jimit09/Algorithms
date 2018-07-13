@@ -134,5 +134,53 @@ namespace Algorithms.Tree.BinarySearchTree
             TreeNode node = null;
             return CheckBalancedBST(node, Int32.MinValue, Int32.MaxValue);
         }
+
+        //This does not consider the case when root could be null
+        public static int GetHeight(TreeNode root)
+        {
+            if (root.left == null && root.right == null)
+            {
+                return 0;
+            }
+            int rightHeight = 0;
+            if (root.right != null)
+            {
+                rightHeight = GetHeight(root.right);
+            }
+
+            int leftHeight = 0;
+            if (root.left != null)
+            {
+                leftHeight = GetHeight(root.left);
+            }
+            if (rightHeight >= leftHeight)
+                return rightHeight + 1;
+            else
+                return leftHeight + 1;
+        }
+
+        /// <summary>
+        ///For base case giving height of -1.
+        ///This method considers the case when root could be null
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        int GetHeightUsingBaseCase(TreeNode root)
+        {
+            if (root == null)
+            {
+                return -1;
+            }
+            int leftHeight = GetHeightUsingBaseCase(root.left);
+            int rightHeight = GetHeightUsingBaseCase(root.right);
+            if (leftHeight >= rightHeight)
+            {
+                return leftHeight + 1;
+            }
+            else
+            {
+                return rightHeight + 1;
+            }
+        }
     }
 }
