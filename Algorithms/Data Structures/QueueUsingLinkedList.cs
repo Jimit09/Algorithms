@@ -11,7 +11,7 @@ namespace Algorithms.Data_Structures
         MyLinkedListNode head;//Remove using head
         MyLinkedListNode tail;//Add using tail
 
-        void Add(int data)
+        void EnQueue(int data)
         {
             MyLinkedListNode newNode = new MyLinkedListNode(data);
             if (tail != null)
@@ -25,7 +25,7 @@ namespace Algorithms.Data_Structures
             }
         }
 
-        int Remove()
+        int DeQueue()
         {
             if (head == null)
             {

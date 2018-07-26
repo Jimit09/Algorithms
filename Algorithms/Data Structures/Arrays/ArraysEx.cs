@@ -175,11 +175,12 @@ namespace Algorithms.Data_Structures.Arrays
                 list.Add(new Tuple<int, string>(elements[i], s));
             }
 
-            
-            //
-           // list.Where(r => r.Item2 )
 
-            int[] Sort(int[] elementsToSort) { 
+            //
+            // list.Where(r => r.Item2 )
+
+            int[] Sort(int[] elementsToSort)
+            {
 
 
                 return elementsToSort;
@@ -188,10 +189,53 @@ namespace Algorithms.Data_Structures.Arrays
             return new int[] { 1, 2, 3 };
         }
 
-        static string ToBinary(int num) {
+        static string ToBinary(int num)
+        {
             return Convert.ToString(num, 2);
         }
 
 
+        /* Write a function:
+
+ class Solution { public int solution(int[] A); }
+
+         that, given an array A of N integers, returns the smallest positive integer(greater than 0) that does not occur in A.
+
+        For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
+
+ Given A = [1, 2, 3], the function should return 4.
+
+ Given A = [−1, −3], the function should return 1.
+
+ Assume that:
+
+ N is an integer within the range[1..100, 000];
+ each element of array A is an integer within the range[−1, 000, 000..1, 000, 000].
+ Complexity:
+
+ expected worst-case time complexity is O(N);
+         expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
+         */
+
+        public int FindSmallestPositiveInt(int[] A)
+        {
+            // write your code in C# 6.0 with .NET 4.5 (Mono)
+            HashSet<int> map = new HashSet<int>();
+            for (int i = 0; i < A.Length; i++)
+            {
+                if (!map.Contains(A[i]))
+                {
+                    map.Add(A[i]);
+                }
+            }
+            for (int j = 1; j < A.Length; j++)
+            {
+                if (!map.Contains(j))
+                {
+                    return j;
+                }
+            }
+            return 1;
+        }
     }
 }
