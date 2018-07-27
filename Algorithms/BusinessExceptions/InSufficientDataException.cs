@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace Algorithms.BusinessExceptions
 {
-    public class InSufficientDataException : Exception
+    public class InsufficientDataException : Exception
     {
-        public InSufficientDataException()
+        public InsufficientDataException()
         {
         }
 
-        public InSufficientDataException(string message) : base(message)
+        public InsufficientDataException(string message) : base(message)
         {
         }
 
-        public InSufficientDataException(string message, Exception innerException) : base(message, innerException)
+        public InsufficientDataException(string message, Exception innerException) : base(message, innerException)
         {
         }
 
-        protected InSufficientDataException(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected InsufficientDataException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
     }

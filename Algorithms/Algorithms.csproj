@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinarySearch.cs" />
-    <Compile Include="BusinessExceptions\InSufficientDataException.cs" />
+    <Compile Include="BusinessExceptions\InsufficientDataException.cs" />
     <Compile Include="Data Structures\Arrays\ArraysEx.cs" />
     <Compile Include="Data Structures\DoublyLinkedList.cs" />
     <Compile Include="Data Structures\Graph\Graph.cs" />
@@ -57,6 +57,7 @@
     <Compile Include="Data Structures\MyLinkedListNode.cs" />
     <Compile Include="Data Structures\QueueUsingLinkedList.cs" />
     <Compile Include="Data Structures\QueueUsingLinkedListTest.cs" />
+    <Compile Include="Data Structures\StackUsingArray.cs" />
     <Compile Include="Data Structures\StackUsingLinkedList.cs" />
     <Compile Include="Data Structures\StackUsingLinkedListTest.cs" />
     <Compile Include="IAlgorithm.cs" />

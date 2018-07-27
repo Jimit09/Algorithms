@@ -54,7 +54,7 @@ namespace Algorithms.Data_Structures
         {
             if (_top1 == -1)
             {
-                throw new InSufficientDataException();
+                throw new InsufficientDataException();
             }
             else
             {
@@ -68,7 +68,7 @@ namespace Algorithms.Data_Structures
         {
             if (_top2 == _size)
             {
-                throw new InSufficientDataException();
+                throw new InsufficientDataException();
             }
             else
             {
