@@ -237,5 +237,70 @@ namespace Algorithms.Data_Structures.Arrays
             }
             return 1;
         }
+
+
+        //        Sort an array of 0,1,2
+        //        Input :  0, 1, 2, 0, 1, 2
+        //        Output : 0, 0, 1, 1, 2, 2
+        //        Input :  1, 2, 0, 0, 2, 1, 2, 0
+        //        Output : 0, 0, 0, 1, 1, 2, 2, 2
+        // Only 3 nos are there and also sort need to support in place. 
+        void Sort(int[] array)
+        {
+
+            int lowIndex = -1;
+            int highIndex = array.Length;
+            for (int i = 0; i < array.Length; i++)
+            {
+
+                if (array[i] == 0)
+                {
+                    lowIndex++;
+
+                }
+                else if (array[i] == 2)
+                {
+                    highIndex--;
+                }
+
+                if (lowIndex < highIndex)
+                {
+                    Swap(array, lowIndex, highIndex);
+                }
+
+            }
+        }
+
+        //Complexity is O(n) i.e O(n) for iterating through array. And O(n), when there will be no pairs in the array.
+        public static int GetIndenticalPairCount(int[] array)
+        {
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (dict.ContainsKey(array[i]))
+                {
+                    dict[array[i]]++;
+                }
+                else
+                {
+                    dict[array[i]] = 0;
+                }
+            }
+            int totalPairCount = 0;
+            foreach (var item in dict)
+            {
+                int value = item.Value;
+                totalPairCount += (value * (value - 1)) / 2;
+            }
+            return totalPairCount;
+        }
+
+        //public static void Main()
+        //{
+        //    int[] array = new int[] { 3, 5, 2, 3, 3, 5 };
+        //    int countOfIdenticalPair = GetIndenticalPairCount(array);
+        //    Console.WriteLine("The identical pairs in givn array is {0}", countOfIdenticalPair);
+        //    Console.ReadLine();
+        //}
     }
 }
