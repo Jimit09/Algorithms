@@ -54,20 +54,15 @@ namespace Algorithms.Sorters
         private void BubbleSortAgain(int[] arrayToSort)
         {
             int endIndex = arrayToSort.Length - 1;
-            for (int i = 0; i < arrayToSort.Length; i++)
+            for (int i = 0; i < arrayToSort.Length - 1; i++)
             {
-                BubbleSortAgain(arrayToSort, endIndex);
-                --endIndex;
-            }
-        }
 
-        private void BubbleSortAgain(int[] arrayToSort, int endIndex)
-        {
-            for (int i = 0; i < endIndex; i++)
-            {
-                if (arrayToSort[i] > arrayToSort[i + 1])
+                for (int j = 0; j < arrayToSort.Length - 1 - i; j++)
                 {
-                    Swap(arrayToSort, i, i + 1);
+                    if (arrayToSort[i] > arrayToSort[i + i])
+                    {
+                        Swap(arrayToSort, i, i + 1);
+                    }
                 }
             }
         }

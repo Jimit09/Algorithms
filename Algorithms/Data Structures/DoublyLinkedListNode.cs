@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Data_Structures
 {
-    public class MyLinkedListNode
+    public class DoublyLinkedListNode
     {
-        public MyLinkedListNode Next { get; set; }
         public int Data { get; set; }
+        public DoublyLinkedListNode previous { get; set; }
+        public DoublyLinkedListNode next { set; get; }
 
-        public MyLinkedListNode(int data)
-        {
-            this.Data = data;
-        }
     }
 }

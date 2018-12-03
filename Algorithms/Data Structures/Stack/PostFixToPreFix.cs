@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms.Data_Structures
+namespace Algorithms.Data_Structures.Stack
 {
-    internal class DoublyLinkedList
+    public class PostFixToPreFix
     {
-        public int Data { get; set; }
     }
 }

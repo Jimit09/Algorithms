@@ -32,6 +32,7 @@ namespace Algorithms
             //algoToRun = new BubbleSort();
             //algoToRun = new LinkedListTest();
             //algoToRun = new QuickSort();
+            //algoToRun = new CountingSort();
             //algoToRun = new ReferenceSample();
             //algoToRun.DoWork();
 
@@ -89,12 +90,22 @@ namespace Algorithms
             //Console.WriteLine("Popped element from stack 1 is " + ks.pop(1));
             //Console.WriteLine("Popped element from stack 0 is " + ks.pop(0));
 
+            LRUCache cache = new LRUCache();
+            cache.Put(1, 1);
+            cache.Put(10, 15);
+            cache.Put(15, 10);
+            cache.Put(10, 16);
+            cache.Put(12, 16);
+            cache.Put(18, 10);
+            cache.Put(13, 16);
 
-
+            Console.WriteLine(cache.Get(1));
+            Console.WriteLine(cache.Get(10));
+            Console.WriteLine(cache.Get(15));
 
             Console.ReadLine();
             //arraysEx.RearrangeTest();
-        }   
+        }
 
         public static int solution(int[] A)
         {

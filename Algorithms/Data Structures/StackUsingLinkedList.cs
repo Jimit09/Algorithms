@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Data_Structures
 {
-    internal class StackUsingLinkedList
+    public class StackUsingLinkedList
     {
         MyLinkedListNode top;
 

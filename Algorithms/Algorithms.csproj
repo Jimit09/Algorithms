@@ -47,7 +47,7 @@
     <Compile Include="BinarySearch.cs" />
     <Compile Include="BusinessExceptions\InsufficientDataException.cs" />
     <Compile Include="Data Structures\Arrays\ArraysEx.cs" />
-    <Compile Include="Data Structures\DoublyLinkedList.cs" />
+    <Compile Include="Data Structures\DoublyLinkedListNode.cs" />
     <Compile Include="Data Structures\Graph\Graph.cs" />
     <Compile Include="Data Structures\Graph\GraphNode.cs" />
     <Compile Include="Data Structures\Heap.cs" />
@@ -55,13 +55,21 @@
     <Compile Include="Data Structures\LinkedListTest.cs" />
     <Compile Include="Data Structures\MyLinkedList.cs" />
     <Compile Include="Data Structures\MyLinkedListNode.cs" />
+    <Compile Include="Data Structures\QueueUsingArray.cs" />
     <Compile Include="Data Structures\QueueUsingLinkedList.cs" />
     <Compile Include="Data Structures\QueueUsingLinkedListTest.cs" />
+    <Compile Include="Data Structures\StackUsingArrayExtensions.cs" />
     <Compile Include="Data Structures\StackUsingArray.cs" />
     <Compile Include="Data Structures\StackUsingLinkedList.cs" />
+    <Compile Include="Data Structures\StackUsingLinkedListExtensions.cs" />
     <Compile Include="Data Structures\StackUsingLinkedListTest.cs" />
+    <Compile Include="Data Structures\Stack\InfixToPostFix.cs" />
+    <Compile Include="Data Structures\Stack\PostFixToPreFix.cs" />
+    <Compile Include="Data Structures\Stack\PrefixToInfix.cs" />
     <Compile Include="IAlgorithm.cs" />
     <Compile Include="BusinessExceptions\InvalidInputException.cs" />
+    <Compile Include="LRUCache.cs" />
+    <Compile Include="Numeric\Number.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecrusiveAlgos\FactorialUsingRecursion.cs" />
@@ -70,12 +78,21 @@
     <Compile Include="ReferenceSample.cs" />
     <Compile Include="Sorters\BaseSorter.cs" />
     <Compile Include="Sorters\BubbleSort.cs" />
+    <Compile Include="Sorters\CountingSort.cs" />
     <Compile Include="Sorters\InsertionSort.cs" />
     <Compile Include="Sorters\MergeSort.cs" />
     <Compile Include="Sorters\QuickSort.cs" />
+    <Compile Include="Sorters\RadixSort.cs" />
     <Compile Include="Sorters\SelectionSort.cs" />
-    <Compile Include="Tree\BinarySearchTree\TreeNode.cs" />
+    <Compile Include="Tree\AvlTree.cs" />
+    <Compile Include="Tree\AvlTreeNode.cs" />
+    <Compile Include="Tree\BinarySearchTree\BalancedBinaryTree.cs" />
+    <Compile Include="Tree\BinarySearchTree\BinaryTree.cs" />
+    <Compile Include="Tree\BinarySearchTree\BinaryTreeNode.cs" />
     <Compile Include="Data Structures\TwoStacks.cs" />
+    <Compile Include="Tree\RedBlackTree\Color.cs" />
+    <Compile Include="Tree\RedBlackTree\RedBlackTreeNode.cs" />
+    <Compile Include="Tree\RedBlackTree\RedBlackTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

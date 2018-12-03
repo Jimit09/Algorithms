@@ -10,14 +10,14 @@ namespace Algorithms.Data_Structures.Graph
     {
         private Dictionary<int, GraphNode> nodeLookup = new Dictionary<int, GraphNode>();
 
-        internal void addEdge(int source, int destination)
+        internal void AddEdge(int source, int destination)
         {
-            GraphNode s = getNode(source);
-            GraphNode d = getNode(destination);
+            GraphNode s = GetNode(source);
+            GraphNode d = GetNode(destination);
             s.Adjacent.Add(d);
         }
 
-        private GraphNode getNode(int data)
+        private GraphNode GetNode(int data)
         {
             GraphNode graphNode = new GraphNode(data);
             return graphNode;
@@ -25,8 +25,8 @@ namespace Algorithms.Data_Structures.Graph
 
         internal bool HasPathDFS(int source, int destination)
         {
-            GraphNode s = getNode(source);
-            GraphNode d = getNode(destination);
+            GraphNode s = GetNode(source);
+            GraphNode d = GetNode(destination);
             HashSet<int> visited = new HashSet<int>();
             return HasPathDFS(s, d, visited);
         }
@@ -54,7 +54,7 @@ namespace Algorithms.Data_Structures.Graph
 
         internal bool HasPathBFS(int source, int destination)
         {
-            return HasPathBFS(getNode(source), getNode(destination));
+            return HasPathBFS(GetNode(source), GetNode(destination));
         }
 
         private bool HasPathBFS(GraphNode source, GraphNode destination)

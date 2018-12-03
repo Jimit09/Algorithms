@@ -20,9 +20,9 @@ namespace Algorithms.Data_Structures
             }
             else
             {
-                tail = newNode;
                 head = newNode;
             }
+            tail = newNode;
         }
 
         int DeQueue()

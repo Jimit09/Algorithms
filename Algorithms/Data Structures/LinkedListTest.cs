@@ -22,7 +22,7 @@ namespace Algorithms.Data_Structures
             MyLinkedList linkedList = CreateLinkedList(dataPoints);
 
             Console.WriteLine("Displaying Linked List");
-            DisplayLinkedList(linkedList.head);
+            DisplayLinkedList(linkedList.Head);
 
             //MakeCycle(linkedList);
             Console.WriteLine("Detecting any cycle");
@@ -38,7 +38,7 @@ namespace Algorithms.Data_Structures
             MyLinkedList linkedList1 = CreateLinkedList(dataPoints);
             dataPoints = new List<int>() { 2, 4, 8 };
             MyLinkedList linkedList2 = CreateLinkedList(dataPoints);
-            MyLinkedListNode result = MergeLists1(linkedList1.head, linkedList2.head);
+            MyLinkedListNode result = MergeLists1(linkedList1.Head, linkedList2.Head);
             Console.WriteLine("Displaying Linked List");
             DisplayLinkedList(result);
             Console.ReadLine();
@@ -49,15 +49,15 @@ namespace Algorithms.Data_Structures
             MyLinkedList linkedList = new MyLinkedList();
             for (int i = 0; i < dataPoints.Count; i++)
             {
-                linkedList.append(dataPoints[i]);
+                linkedList.Append(dataPoints[i]);
             }
             return linkedList;
         }
 
         private bool MakeCycle(MyLinkedList linkedList)
         {
-            MyLinkedListNode firstNode = linkedList.head;
-            MyLinkedListNode currentNode = linkedList.head;
+            MyLinkedListNode firstNode = linkedList.Head;
+            MyLinkedListNode currentNode = linkedList.Head;
             if (firstNode == null || firstNode.Next == null)
             {
                 return false;
@@ -92,12 +92,12 @@ namespace Algorithms.Data_Structures
         //Refer HackerRank video on cycle in LinkedList
         private bool HasCycles(MyLinkedList linkedList)
         {
-            MyLinkedListNode node1 = linkedList.head;
+            MyLinkedListNode node1 = linkedList.Head;
             if (node1 == null || node1.Next == null)
             {
                 return false;
             }
-            MyLinkedListNode node2 = linkedList.head.Next;
+            MyLinkedListNode node2 = linkedList.Head.Next;
             while (node1 != null && node2 != null && node2.Next != null)
             {
                 if (node1 == node2)
@@ -110,8 +110,6 @@ namespace Algorithms.Data_Structures
 
         public static MyLinkedListNode MergeLists(MyLinkedListNode headA, MyLinkedListNode headB)
         {
-            // This is a "method-only" submission.
-            // You only need to complete this method
             MyLinkedListNode resultCurrent = null;
             MyLinkedListNode resultHead = null;
 
@@ -182,8 +180,6 @@ namespace Algorithms.Data_Structures
 
         public static MyLinkedListNode MergeLists1(MyLinkedListNode headA, MyLinkedListNode headB)
         {
-            // This is a "method-only" submission.
-            // You only need to complete this method
             MyLinkedListNode resultCurrent = null;
             MyLinkedListNode resultHead = null;
 
@@ -291,6 +287,7 @@ namespace Algorithms.Data_Structures
                 counter++;
             }
 
+            //This is based on assumption that index starts from zero.
             counter = (counter - 1) - positionFromTail;
             current = head;
             while (counter != 0)
@@ -310,7 +307,6 @@ namespace Algorithms.Data_Structures
 
 
         /*
-         * 
          * Given pointers to the head nodes of  linked lists that merge together at some point, 
          * find the Node where the two lists merge. It is guaranteed that the two head
          * Nodes will be different, and neither will be NULL.
@@ -329,8 +325,6 @@ and returns the data value of the Node where the two lists merge.
 
         private int FindMergeNode(MyLinkedListNode headA, MyLinkedListNode headB)
         {
-            // Complete this function
-            // Do not write the main method.
             int result = 0;
 
             bool mergePointFound = false;
@@ -352,6 +346,5 @@ and returns the data value of the Node where the two lists merge.
             }
             return result;
         }
-
     }
 }

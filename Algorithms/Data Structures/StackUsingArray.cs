@@ -50,6 +50,5 @@ namespace Algorithms.Data_Structures
             int retVal = array[top];
             return retVal;
         }
-
     }
 }
