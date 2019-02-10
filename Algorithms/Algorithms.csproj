@@ -63,6 +63,7 @@
     <Compile Include="Data Structures\StackUsingLinkedList.cs" />
     <Compile Include="Data Structures\StackUsingLinkedListExtensions.cs" />
     <Compile Include="Data Structures\StackUsingLinkedListTest.cs" />
+    <Compile Include="Data Structures\Stack\BalancedParenthesis.cs" />
     <Compile Include="Data Structures\Stack\InfixToPostFix.cs" />
     <Compile Include="Data Structures\Stack\PostFixToPreFix.cs" />
     <Compile Include="Data Structures\Stack\PrefixToInfix.cs" />
@@ -97,6 +98,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data Structures\Graph\AdjacencyList\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

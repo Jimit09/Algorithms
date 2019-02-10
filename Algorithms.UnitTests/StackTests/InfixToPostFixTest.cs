@@ -27,6 +27,15 @@ namespace Algorithms.UnitTests.StackTests
             Assert.AreEqual<string>(expected, result);
         }
 
+        [TestMethod]
+        public void Check_IsBalancedParenthesis_ForBalanced_ReturnsBalanced()
+        {
+            BalancedParenthesis balancedParenthesis = new BalancedParenthesis();
+            string str = "{(([])[])[]}";
+            bool expectedResult = true;
+            bool actualResult = balancedParenthesis.IsBalanced(str);
+            Assert.IsTrue(expectedResult == actualResult);
+        }
 
     }
 }
