@@ -259,3 +259,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/Algorithms/Data Structures/Graph/Dijkstra.cs
+/Algorithms.UnitTests/GraphTests/DijkstraTest.cs
+/Algorithms/Data Structures/Graph/AdjacencyList
+/Algorithms/Data Structures/Graph/AdjajencyMatrix
+/Algorithms/packages.config

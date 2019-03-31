@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayExTests.cs" />
+    <Compile Include="GraphTests\UnionFinderTest.cs" />
     <Compile Include="LinkedListTests\MyLinkedListTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StackTests\InfixToPostFixTest.cs" />

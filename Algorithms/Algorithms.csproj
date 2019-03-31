@@ -35,7 +35,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +56,7 @@
     <Compile Include="Data Structures\DoublyLinkedListNode.cs" />
     <Compile Include="Data Structures\Graph\Graph.cs" />
     <Compile Include="Data Structures\Graph\GraphNode.cs" />
+    <Compile Include="Data Structures\Graph\UnionFinder\Graph.cs" />
     <Compile Include="Data Structures\Heap.cs" />
     <Compile Include="Data Structures\KStack.cs" />
     <Compile Include="Data Structures\LinkedListTest.cs" />
@@ -97,9 +104,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data Structures\Graph\AdjacencyList\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
